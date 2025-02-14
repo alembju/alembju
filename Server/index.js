@@ -33,7 +33,8 @@ const { Server } = require('socket.io');
 
 const port = process.env.PORT || 3000;
 
-const path= require('path')
+const path= require('path');
+const { connect } = require('node:http2');
 const SECRET_KEY = 'super-secret-key'
 dotenv.config();
 
@@ -65,9 +66,17 @@ app.use("/Meningits", express.static("Meningits"));
 //app.use(express.json())
 //app.use(express.urlencoded({extended:true}))
 app.use(bodyParser.json())
-
-mongoose.connect('mongodb://127.0.0.1:27017/image')
-
+//const URI = ("mongodb+srv://AACDMC:Alem%400913629813;@cluster0.en5lj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+console.log(process.env.MONGO_URL)
+// async function Connect() {
+//   try{
+//    await mongoose.connect('URI')
+//    console.log(process.env.MONGO_URL)
+//   }catch (error){
+//     console.log(`error -> ${error}`)
+//   }
+// }
+// connect()
 
 ///////////////////////////Authontication ,sesion,cookies//////
 
