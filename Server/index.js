@@ -67,7 +67,7 @@ app.use("/Meningits", express.static("Meningits"));
 //app.use(express.urlencoded({extended:true}))
 app.use(bodyParser.json())
 //const URI = ("mongodb+srv://AACDMC:Alem%400913629813;@cluster0.en5lj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-console.log(process.env.MONGO_URL)
+console.log(process.env.MONGO_URL/AACDMC)
 // async function Connect() {
 //   try{
 //    await mongoose.connect('URI')
